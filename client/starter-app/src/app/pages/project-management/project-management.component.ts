@@ -12,7 +12,7 @@ export class ProjectManagementComponent implements OnInit {
 
   ngOnInit() {
   }
-  private active:string='list-projects';
+  private active:string;
 
   navigateTo(link){
     this.active=link;
