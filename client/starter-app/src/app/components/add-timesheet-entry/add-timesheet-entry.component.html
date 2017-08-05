@@ -1,12 +1,12 @@
 <div class="timesheet">
   <div class="card">
     <div class="card-block">
-      <div>
-        <div>
+      <div class="sentence">
+        <div class="first">
           On , 
           <p-calendar [(ngModel)]="entryDate" [showIcon]="true"></p-calendar>,
         </div>
-        <div class="row">
+        <div class="second row">
           <div class="col-10">
             I spent <input type=number min=1 max=8 [(ngModel)]="duration"> hours
             on <p-dropdown [options]="activities" [(ngModel)]="activity"></p-dropdown>
@@ -20,18 +20,30 @@
         </div>
       </div>
 
-      <div>
+      <div class="display-entries">
         <ul>
-          <li *ngFor="let entry of displayEntries">{{entry}}</li>
+          <li *ngFor="let entry of displayEntries" class="row">
+            <!--<div class="row">-->
+              <div class="col-10">
+              {{entry}}
+              </div>
+              <div class="col-2">
+                <button (click)="removeEntry(entry)">
+                  <i class="material-icons">remove</i>
+                </button>
+              </div>
+              
+            <!--</div>-->
+            </li>
         </ul>
       </div>
 
-      <div class="row">
+      <div class="sum row">
         <div class="col-6">
-          {{totalHours}} hours logged.
+          <p>{{totalHours}} hours logged.</p>
         </div>
-        <div class="col-6 submit-button">
-          <button [disabled]="!entryDate || !(displayEntries.length>0)" type="button" class="btn btn-primary" (click)="saveTimesheet()">Save Timesheet</button>
+        <div class="col-6">
+          <button [disabled]="!entryDate || !(displayEntries.length>0) || totalHours>8" type="button" class="btn btn-primary submit-button" (click)="saveTimesheet()">Save Timesheet</button>
         </div>
       </div>
 

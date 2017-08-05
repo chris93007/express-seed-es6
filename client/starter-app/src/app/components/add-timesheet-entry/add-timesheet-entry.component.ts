@@ -18,6 +18,7 @@ export class AddTimesheetEntryComponent implements OnInit {
   private project :any;
 
   private displayEntries:Array<string>=[];
+  private entries:Array<any>=[];
   private totalHours:number=0;
 
   private activities =[
@@ -34,11 +35,23 @@ export class AddTimesheetEntryComponent implements OnInit {
     ];
 
     addEntry(){
-      console.log(this.project)
-      this.totalHours+=this.duration
+      this.totalHours+=this.duration;
       let entry=`${this.duration} hours on ${this.activity.name} for ${this.project.name}`;
-      console.log(entry)
       this.displayEntries.push(entry);
+      this.entries.push({
+        duration:this.duration,
+        activity:this.activity.id,
+        project:this.project.id
+      })
+    }
+
+    removeEntry(entry){
+      let index = this.displayEntries.indexOf(entry);
+      if (index > -1) {
+          this.displayEntries.splice(index, 1);
+          this.totalHours-=this.entries[index].duration;
+          this.entries.splice(index, 1);
+      }
     }
 
     saveTimesheet(){
