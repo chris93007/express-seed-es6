@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
+import mongoose from 'mongoose';
 
 import apiRouter from './app.router.js';
 
@@ -10,6 +11,10 @@ app.set('port', process.env.PORT || 8080);
 app.use(cors());
 
 app.use(express.static('./client/public'));
+
+mongoose.createConnection('mongodb://localhost:27017/pmo');
+
+mongoose.connect('mongodb://localhost:27017/pmo');
 
 app.get('/', function (req, res) {
  	res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
