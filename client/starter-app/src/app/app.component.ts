@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Http, Response } from '@angular/http';
+import { UserService } from './providers/user.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +11,13 @@ export class AppComponent {
 
   title = 'app works!!!!!!!!!!';
 
-  constructor(private http:Http){
+  constructor(private userService:UserService){
 
   }
 
   ngOnInit(){
-
+    this.userService.userRole="admin";
+    console.log('AppComponent')
   }
 
 }

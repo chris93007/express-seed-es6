@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../providers/user.service';
 
 @Component({
   selector: 'pmo-side-menu',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService:UserService
+  ) { }
+
+  private role:string;
 
   ngOnInit() {
+    this.role=this.userService.userRole;
+    console.log(this.role)
   }
 
 }

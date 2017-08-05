@@ -5,8 +5,8 @@
           <li class="nav-title hidden-md-down">Links</li>
 
           <li><a routerLink="timesheet">Timesheet</a></li>
-          <li><a routerLink="approvals">Approvals</a></li>
-          <li><a [routerLink]="'projects'">Project Management</a></li>
+          <li *ngIf="role=='manager' || role=='admin'"><a routerLink="approvals">Approvals</a></li>
+          <li *ngIf="role=='admin'"><a [routerLink]="'projects'">Project Management</a></li>
 
 
         </ul>
