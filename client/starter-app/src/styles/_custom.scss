@@ -1,0 +1,42 @@
+// Here you can add other styles
+.sidebar {
+  .sidebar-nav, ul.nav {
+    width: $sidebar-width - 16px;
+  }
+}
+
+ // Breakpoints
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-medium-large: 85.375; // 1366px
+$bp-large: 105em; // 1680px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+
+// Media Queries
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+ 
+body{
+  position: relative;
+}
+
+ .custom-btn-dropdown{
+    margin: 8px 0px;
+    border-color: $border-color;
+    outline: 0;
+    background: transparent;
+}
+.custom-btn-dropdown:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+button , a{
+  cursor: pointer;
+  outline: none;
+}

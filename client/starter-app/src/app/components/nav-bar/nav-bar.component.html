@@ -1,0 +1,29 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Project Management Office</a>
+
+    <ul class="nav navbar-nav ml-auto" id="dropdownItems">
+        <li class="nav-item">
+            <div class="dropdown" dropdown>
+            <button dropdownToggle 
+                    type="button" 
+                    placement="bottom" 
+                    tooltip="Account settings"
+                    class="dropdown-toggle nav-link">
+                        <i class="material-icons circle">account_circle</i>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li role="menuitem">
+                        <a class="dropdown-item" (click)="logout()">
+                            Logout
+                        </a>
+                    </li>
+            </ul>
+            </div>
+
+        </li>
+    </ul>
+
+</nav>

@@ -1,0 +1,36 @@
+.timesheet{
+
+    .sentence{
+        margin-bottom: 20px;
+        .first{
+            margin-bottom: 10px;
+        }
+        .second{
+            input{
+                min-width: 50px;
+                border: 1px solid #d6d6d6;
+                border-radius: 4px;
+                height: 30px;
+                padding: 8px;
+            }
+        }
+    }
+
+    .display-entries{
+        margin-bottom: 20px;
+        li{
+            color: #0275d8;
+            
+        }
+    }
+
+    .sum{
+        .submit-button{
+            float: right;
+        }
+        p{
+            margin: 0;
+            font-size: 20px;
+        }
+    }
+}

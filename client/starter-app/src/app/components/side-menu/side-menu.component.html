@@ -1,0 +1,14 @@
+<div class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+
+        <ul class="nav">
+          <li class="nav-title hidden-md-down">Links</li>
+
+          <li><a routerLink="timesheet">Timesheet</a></li>
+          <li *ngIf="role=='manager' || role=='admin'"><a routerLink="approvals">Approvals</a></li>
+          <li *ngIf="role=='admin'"><a [routerLink]="'project-management'">Project Management</a></li>
+
+
+        </ul>
+    </nav>
+</div>

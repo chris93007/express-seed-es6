@@ -1,0 +1,216 @@
+// Core Admin Variables
+$enable-sidebar-nav-rounded: true;
+$border-color: $gray-lighter;
+$layout-transition-speed: .25s;
+// Colors
+$inbox-blue: #4285F4;
+$inbox-blue-light: #71A3F7;
+$white: #FFFFFF;
+$subtitle: $gray-light;
+$border: $gray-lighter;
+$material-text: #616161;
+$material-text-hover: #212121;
+$fab-color: #F44336;
+$alveo-primary: #2196F3;
+$alveo-primary-hover: #F8F9FA;
+$alveo-primary-light: rgba(33, 150, 243, 0.87);
+$alveo-success: #4dbd74;
+$alveo-info: #63c2de;
+$alveo-warning: #f8cb00;
+$alveo-danger: #f86c6b;
+$black: #000;
+$black-headers: #2b2d37;
+$white-30dark: rgba(255, 255, 255, 0.3);
+$black-box-shadow: rgba(0, 0, 0, 0.26);
+$white: #FFF;
+$secondary-text: #696a71;
+$btn-default-text : #565a5d;
+// Badge Colors
+$success-background: $alveo-success;
+$success-border: $alveo-success;
+$warning-color: $alveo-warning;
+$inactive-color: #818a91;
+$certification-color: #673AB7;
+$danger-background: $alveo-danger;
+$danger-border: $alveo-danger;
+// $success-background: #3A9D5D;
+// $success-border: #379558;
+// $warning-color: #FF8F00;
+// $inactive-color: #9E9E9E;
+// $certification-color: #673AB7;
+// $danger-background: #F63C3A;
+// $danger-border: #F53237;
+// Social Colors
+$facebook: #3b5998;
+$twitter: #00aced;
+$linkedin: #4875b4;
+$google-plus: #d34836;
+$flickr: #ff0084;
+$tumblr: #32506d;
+$xing: #026466;
+$github: #4183c4;
+$html5: #e34f26;
+$openid: #f78c40;
+$stack-overflow: #fe7a15;
+$youtube: #b00;
+$css3: #0170ba;
+$dribbble: #ea4c89;
+$google-plus: #bb4b39;
+$instagram: #517fa4;
+$pinterest: #cb2027;
+$vk: #45668e;
+$yahoo: #400191;
+$behance: #1769ff;
+$dropbox: #007ee5;
+$reddit: #ff4500;
+$spotify: #7ab800;
+$vine: #00bf8f;
+$foursquare: #1073af;
+$vimeo: #aad450;
+// Navbar
+$navbar-height: 64px;
+$navbar-bg: #fff;
+$navbar-border: ( bottom: ( size: 1px, style: solid, color: $border-color));
+$navbar-brand-width: 240px;
+$navbar-brand-bg: $alveo-primary;
+$navbar-brand-logo: url('/img/logo.png');
+$navbar-brand-logo-size: 70px auto;
+$navbar-brand-border: ( bottom: ( size: 1px, style: solid, color: $alveo-primary));
+$navbar-color: rgba(0,
+0,
+0,
+.3);
+$navbar-hover-color: rgba(0,
+0,
+0,
+.6);
+$navbar-active-color: rgba(0,
+0,
+0,
+.8);
+$navbar-disabled-color: rgba(0,
+0,
+0,
+.15);
+// Secondary Navbar
+$secondary-navbar-height: 54px;
+// Sidebar
+$sidebar-width: 160px;
+$mobile-sidebar-width: 160px;
+$sidebar-padding: 0 0 0 $spacer-x;
+$sidebar-compact-width: 60px;
+$sidebar-compact-height: $sidebar-compact-width;
+$sidebar-color: $gray-dark;
+$sidebar-bg: $body-bg;
+$sidebar-header-bg: rgba(0,
+0,
+0,
+.2);
+$sidebar-footer-bg: rgba(0,
+0,
+0,
+.2);
+$sidebar-borders: none;
+// Sidebar Navigation
+$sidebar-nav-color: $gray-dark;
+$sidebar-nav-title-padding-y: .95rem;
+$sidebar-nav-title-padding-x: 1rem;
+$sidebar-nav-title-color: $text-muted;
+$sidebar-nav-link-padding-y: .75rem;
+$sidebar-nav-link-padding-x: 1rem;
+$sidebar-nav-link-color: $gray-dark;
+$sidebar-nav-link-bg: transparent;
+$sidebar-nav-link-icon-color: $gray-dark;
+$sidebar-nav-link-borders: 0;
+$sidebar-nav-link-hover-color: #fff;
+$sidebar-nav-link-hover-bg: $alveo-primary;
+$sidebar-nav-link-hover-icon-color: #fff !important;
+$sidebar-nav-link-hover-borders: 0;
+$sidebar-nav-link-active-color: #fff;
+$sidebar-nav-link-active-bg: $alveo-primary;
+$sidebar-nav-link-active-icon-color: #fff !important;
+$sidebar-nav-link-active-borders: 0;
+$sidebar-nav-dropdown-color: #fff;
+$sidebar-nav-dropdown-bg: lighten($alveo-primary,
+10%);
+$sidebar-nav-dropdown-icon-color: #fff !important;
+$sidebar-nav-dropdown-borders: 0;
+// Top Navigation
+$top-nav-bg: #fff;
+$top-nav-color: $body-color;
+$top-nav-borders: ( bottom: ( size: 1px, style: solid, color: $border-color));
+$top-nav-ul-borders: ( all: ( size: 1px, style: solid, color: $border-color));
+$top-nav-hover-color: #fff;
+$top-nav-hover-bg: $brand-primary;
+$top-nav-active-color: #fff;
+$top-nav-active-bg: $brand-primary;
+$top-nav-height: $navbar-height - 15px;
+// Breadcrumb
+$breadcrumb-borders: 0;
+// Aside
+$aside-menu-width: 250px;
+$aside-menu-color: $gray-dark;
+$aside-menu-bg: #fff;
+$aside-menu-borders: ( left: ( size: 1px, style: solid, color: $border-color));
+$aside-menu-nav-padding-y: .75rem;
+$aside-menu-nav-padding-x: 1rem;
+// Footer
+$footer-height: 64px;
+$footer-bg: transparent;
+$footer-color: $body-color;
+$footer-borders: 0;
+// Cards
+$card-icon-bg: transparent;
+$card-icon-color: $body-color;
+// 30px margin
+.m-30 {
+    margin: 30px 30px !important;
+}
+
+.mt-30 {
+    margin-top: 30px !important;
+}
+
+.mr-30 {
+    margin-right: 30px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.ml-30 {
+    margin-left: 30px !important;
+}
+
+// 30px padding
+.p-30 {
+    padding: 30px 30px !important;
+}
+
+.pt-30 {
+    padding-top: 30px !important;
+}
+
+.pr-30 {
+    padding-right: 30px !important;
+}
+
+.pb-30 {
+    padding-bottom: 30px !important;
+}
+
+.pl-30 {
+    padding-left: 30px !important;
+}
+
+//$dirty $invalid input control msg $css3
+@mixin border-msg {
+    border: 1px solid $alveo-danger;
+    border-radius: 4px;
+}
+
+@mixin footer_font {
+    font-size: 16px;
+    font-weight: normal;
+}

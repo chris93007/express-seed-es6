@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Http, Response } from '@angular/http';
+import { UserService } from './providers/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +10,14 @@ import { Http, Response } from '@angular/http';
 export class AppComponent {
 
   title = 'app works!!!!!!!!!!';
-  httpResponse:any;
 
-  constructor(private http:Http){
+  constructor(private userService:UserService){
 
   }
 
   ngOnInit(){
-    this.http.get('http://localhost:8080/api/hello')
-    .subscribe((res:Response)=>{
-      this.httpResponse=res.json().text;
-    })
+    this.userService.userRole="admin";
+    this.userService.userID="P10E0142";
   }
 
 }
