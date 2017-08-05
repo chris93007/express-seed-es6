@@ -1,0 +1,20 @@
+.row{  
+    margin: 0;
+    .col-6{
+        text-align: center;
+        border: 1px solid #d1d4d7;
+        border-radius: 4px;
+        height:35px;
+
+        p{
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+}
+
+.active{
+    background: #20a8d8;
+    color: #FFF;
+    border-color:#20a8d8;
+}

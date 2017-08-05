@@ -6,7 +6,7 @@
 
           <li><a routerLink="timesheet">Timesheet</a></li>
           <li *ngIf="role=='manager' || role=='admin'"><a routerLink="approvals">Approvals</a></li>
-          <li *ngIf="role=='admin'"><a [routerLink]="'projects'">Project Management</a></li>
+          <li *ngIf="role=='admin'"><a [routerLink]="'project-management'">Project Management</a></li>
 
 
         </ul>

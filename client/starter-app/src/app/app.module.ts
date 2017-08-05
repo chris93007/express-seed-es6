@@ -6,7 +6,7 @@ import { HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule, TooltipModule } from 'ngx-bootstrap';
-import { CalendarModule, InputMaskModule, DropdownModule } from 'primeng/primeng';
+import { CalendarModule, InputMaskModule, DropdownModule, DataListModule } from 'primeng/primeng';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,13 +20,17 @@ import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { ApprovalsComponent } from './pages/approvals/approvals.component';
 import { ProjectManagementComponent } from './pages/project-management/project-management.component';
 
+//Providers
+import { UserService } from './providers/user.service';
+import { UtilityService } from './providers/utility.service';
+import { TimesheetService} from './providers/timesheet.service';
+
 //Components
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
-
-//Providers
-import { UserService } from './providers/user.service';
 import { AddTimesheetEntryComponent } from './components/add-timesheet-entry/add-timesheet-entry.component';
+import { ListProjectsComponent } from './pages/project-management/projects/list-projects/list-projects.component';
+import { ListActivitiesComponent } from './pages/project-management/activities/list-activities/list-activities.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { AddTimesheetEntryComponent } from './components/add-timesheet-entry/add
     TimesheetComponent,
     ApprovalsComponent,
     ProjectManagementComponent,
-    AddTimesheetEntryComponent
+    AddTimesheetEntryComponent,
+    ListProjectsComponent,
+    ListActivitiesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,7 @@ import { AddTimesheetEntryComponent } from './components/add-timesheet-entry/add
     CalendarModule,
     InputMaskModule,
     DropdownModule,
+    DataListModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
@@ -54,6 +61,8 @@ import { AddTimesheetEntryComponent } from './components/add-timesheet-entry/add
     UserService,
     ApprovalsGuard,
     ProjectManagementGuard,
+    UtilityService,
+    TimesheetService,
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy

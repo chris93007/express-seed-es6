@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'pmo-project-management',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectManagementComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router:Router) { }
 
   ngOnInit() {
+  }
+  private active:string='list-projects';
+
+  navigateTo(link){
+    this.active=link;
+    // this.router.navigate(['project-management'])
+    this.router.navigateByUrl(`/project-management/(pmRoutes:${link})`);
   }
 
 }

@@ -9,6 +9,8 @@ import { ProjectManagementGuard } from './guards/project-management.guard';
 import { TimesheetComponent } from './pages/timesheet/timesheet.component';
 import { ApprovalsComponent } from './pages/approvals/approvals.component';
 import { ProjectManagementComponent } from './pages/project-management/project-management.component';
+import { ListProjectsComponent } from './pages/project-management/projects/list-projects/list-projects.component';
+import { ListActivitiesComponent } from './pages/project-management/activities/list-activities/list-activities.component';
 
 
 
@@ -21,7 +23,19 @@ const routes: Routes = [
     path: 'approvals', component:ApprovalsComponent, canActivate:[ApprovalsGuard]
   },
   {
-    path: 'projects', component:ProjectManagementComponent, canActivate:[ProjectManagementGuard]
+    path: 'project-management',  canActivate:[ProjectManagementGuard],component:ProjectManagementComponent,
+    children:[
+      {
+        path:'list-projects',
+        component:ListProjectsComponent,
+        outlet:'pmRoutes'
+      },
+      {
+        path:'list-activities',
+        component:ListActivitiesComponent,
+        outlet:'pmRoutes'
+      }
+    ]
   }
 ];
 

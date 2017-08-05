@@ -1,3 +1,14 @@
-<p>
-  project-management works!
-</p>
+<div class="row">
+  <div class="col-6" (click)="navigateTo('list-projects')" [ngClass]="{'active':active=='list-projects'}">
+    <p>Projects<p>
+  </div>
+  <div class="col-6" (click)="navigateTo('list-activities')" [ngClass]="{'active':active=='list-activities'}">
+    <p>Activities<p>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="animated fadeIn">
+    <router-outlet name="pmRoutes"></router-outlet>
+  </div>
+</div>
