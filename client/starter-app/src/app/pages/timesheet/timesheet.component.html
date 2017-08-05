@@ -7,7 +7,43 @@
     <div class="col-md-4">
     </div>
   </div>
-  <div class="row">
+
+  <div class="row previous">
+    <div class="card">
+      <div class="card-block">
+        <p-dataList [value]="timesheets" [paginator]="true" [rows]="10">
+            <p-header>
+                Previous Timesheets
+            </p-header>
+            <ng-template let-timesheet pTemplate="item">
+                <div class="ui-g ui-fluid timesheet-item">
+
+                    <div class="col-12 timesheet-details">
+                        <div class="row">
+                          <div class="col-3">
+                            <div class="row>"><label>Date</label></div>
+                            <div class="row>">{{timesheet?.date}}</div>
+                          </div>
+                          <div class="col-3">
+                            <div class="row>"><label>Activity</label></div>
+                            <div class="row>">{{timesheet?.activity}}</div>
+                          </div>
+                          <div class="col-3">
+                            <div class="row>"><label>Project</label></div>
+                            <div class="row>">{{timesheet?.project}}</div>
+                          </div>
+                          <div class="col-3">
+                            <div class="row>"><label>Status</label></div>
+                            <div class="row>">{{timesheet?.status}}</div>
+                          </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-dataList>
+      </div>
+    </div>    
   </div>
 
 
