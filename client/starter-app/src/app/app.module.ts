@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule, TooltipModule } from 'ngx-bootstrap';
+import { CalendarModule, InputMaskModule, DropdownModule } from 'primeng/primeng';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +26,7 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 
 //Providers
 import { UserService } from './providers/user.service';
+import { AddTimesheetEntryComponent } from './components/add-timesheet-entry/add-timesheet-entry.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { UserService } from './providers/user.service';
     SideMenuComponent,
     TimesheetComponent,
     ApprovalsComponent,
-    ProjectManagementComponent
+    ProjectManagementComponent,
+    AddTimesheetEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,11 @@ import { UserService } from './providers/user.service';
     HttpModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    AppRoutingModule
+    CalendarModule,
+    InputMaskModule,
+    DropdownModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers:[ 
     UserService,

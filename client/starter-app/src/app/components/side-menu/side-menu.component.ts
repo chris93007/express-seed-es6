@@ -16,7 +16,6 @@ export class SideMenuComponent implements OnInit {
 
   ngOnInit() {
     this.role=this.userService.userRole;
-    console.log(this.role)
   }
 
 }

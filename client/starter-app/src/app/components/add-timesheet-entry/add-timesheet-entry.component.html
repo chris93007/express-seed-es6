@@ -1,0 +1,40 @@
+<div class="timesheet">
+  <div class="card">
+    <div class="card-block">
+      <div>
+        <div>
+          On , 
+          <p-calendar [(ngModel)]="entryDate" [showIcon]="true"></p-calendar>,
+        </div>
+        <div class="row">
+          <div class="col-10">
+            I spent <input type=number min=1 max=8 [(ngModel)]="duration"> hours
+            on <p-dropdown [options]="activities" [(ngModel)]="activity"></p-dropdown>
+            for <p-dropdown [options]="projects" [(ngModel)]="project"></p-dropdown>
+          </div>
+          <div class="col-2">
+            <button (click)="addEntry()" [disabled]="(!duration || !activity || !project)">
+              <i class="material-icons">add</i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <ul>
+          <li *ngFor="let entry of displayEntries">{{entry}}</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          {{totalHours}} hours logged.
+        </div>
+        <div class="col-6 submit-button">
+          <button [disabled]="!entryDate || !(displayEntries.length>0)" type="button" class="btn btn-primary" (click)="saveTimesheet()">Save Timesheet</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
