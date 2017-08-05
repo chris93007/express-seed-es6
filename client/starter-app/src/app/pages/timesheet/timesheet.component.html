@@ -22,19 +22,17 @@
                         <div class="row">
                           <div class="col-3">
                             <div class="row>"><label>Date</label></div>
-                            <div class="row>">{{timesheet?.date}}</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="row>"><label>Activity</label></div>
-                            <div class="row>">{{timesheet?.activity}}</div>
-                          </div>
-                          <div class="col-3">
-                            <div class="row>"><label>Project</label></div>
-                            <div class="row>">{{timesheet?.project}}</div>
+                            <div class="row>">{{timesheet?.date  | date}}</div>
                           </div>
                           <div class="col-3">
                             <div class="row>"><label>Status</label></div>
                             <div class="row>">{{timesheet?.status}}</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="row>"><label>Activities</label></div>
+                            <div class="row>" *ngFor="let activity of timesheet.activities">
+                              {{activity?.duration}} hours on {{activity?.activity}} for {{activity?.project}}
+                              </div>
                           </div>
 
                         </div>
