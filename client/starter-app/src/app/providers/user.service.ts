@@ -6,5 +6,7 @@ export class UserService {
   constructor() { }
 
   public userRole:string;
+  public userID:string;
+  
 
 }

@@ -17,7 +17,7 @@ export class AppComponent {
 
   ngOnInit(){
     this.userService.userRole="admin";
-    console.log('AppComponent')
+    this.userService.userID="P10E0142";
   }
 
 }
