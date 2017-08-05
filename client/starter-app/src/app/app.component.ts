@@ -10,17 +10,13 @@ import { Http, Response } from '@angular/http';
 export class AppComponent {
 
   title = 'app works!!!!!!!!!!';
-  httpResponse:any;
 
   constructor(private http:Http){
 
   }
 
   ngOnInit(){
-    this.http.get('http://localhost:8080/api/hello')
-    .subscribe((res:Response)=>{
-      this.httpResponse=res.json().text;
-    })
+
   }
 
 }

@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "pmo",
       "styles": [
-        "styles.scss"
+        "styles/style.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
