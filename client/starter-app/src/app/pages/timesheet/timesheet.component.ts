@@ -8,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class TimesheetComponent implements OnInit {
 
   constructor() { }
+  private show:boolean=true;
 
   ngOnInit() {
+  }
+
+  refreshData(ev){
+    this.show=false;
+    setTimeout(()=>{
+      this.timesheets.push(ev);
+      this.show=true;
+    },500)
+
   }
 
   private timesheets =  [
@@ -33,7 +43,6 @@ export class TimesheetComponent implements OnInit {
           {"duration":2,"activity":"Development","project":"P10 Internal"},
           {"duration":3,"activity":"Planing","project":"P10 Internal"},
         ]}
-
-    ]
+    ];
 
 }
