@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'pmo-add-timesheet-entry',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AddTimesheetEntryComponent implements OnInit {
 
   constructor() { }
+
+  @Output() newData:EventEmitter<any>=new EventEmitter;
 
   ngOnInit() {
   }
@@ -56,5 +58,11 @@ export class AddTimesheetEntryComponent implements OnInit {
 
     saveTimesheet(){
       console.log('call API')
+      let obj={
+        date:this.entryDate,
+        status:'Pending',
+        activities:this.entries
+      }
+      this.newData.emit(obj)
     }
 }
