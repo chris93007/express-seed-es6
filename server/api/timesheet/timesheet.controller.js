@@ -8,7 +8,7 @@ let controller = {
             .then(timesheet => {
                 res.status(200);
                 res.send({ timesheets: [timesheet] });
-             })
+            })
             .catch(next);
 
     },
@@ -17,8 +17,8 @@ let controller = {
         TimesheetService.getTimesheetById(req.params.id)
             .then(timesheet => {
                 res.status(200);
-                res.send( timesheet );
-             })
+                res.send(timesheet);
+            })
             .catch(next);
     },
 

@@ -32,19 +32,23 @@ let TimesheetService = {
     },
 
     addTimesheet(logs) {
-        let date = logs.date;
-        let empId = logs.empId;
-        let promises = [];
 
-        _.each(logs.entries, (log) => {
-            let timesheet = new Timesheet(log);
-            timesheet.date = date;
-            timesheet.empId = empId;
-            timesheet.status = 'Pending';
-            promises.push(Timesheet.createAsync(timesheet));
-        });
+        let timesheet = new Timesheet(logs);
+        timesheet.status = 'Pending';
 
-        return Promise.all(promises);
+        return Timesheet.createAsync(timesheet)
+            .then((timesheet) => {
+                return Timesheet.find(timesheet)
+                    .populate({
+                        path: 'entries.projectId',
+                        model: 'Project'
+                    })
+                    .populate({
+                        path: 'entries.activityId',
+                        model: 'Activity'
+                    })
+                    .execAsync();
+            });
     }
 };
 

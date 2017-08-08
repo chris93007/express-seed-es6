@@ -3,12 +3,12 @@ Insert seed data into the following collections:
 INSERT EMPLOYEES
 
 > db.employees.insert({"empId" : "P10E001", "name" : "Rakesh D"});
-> db.employees.insert({"empId" : "P10E134", "name" : "Vijay H", manager: <ObjectId of the first employee>});
+> db.employees.insert({"empId" : "P10E134", "name" : "Vijay H", "manager": ObjectId of the first employee});
 
 
 INSERT PROJECTS
 
->db.projects.insert({"name" : "Allegiant", "manager" : <ObjectId of an employee>, "team": [<ObjectId's of employees>]});
+>db.projects.insert({"name" : "Allegiant", "manager" : ObjectId of an employee, "team": [<ObjectId's of employees>]});
 
 INSERT ACTIVITIES
 
@@ -73,7 +73,7 @@ To add timesheet entries:
 >req body : {
 	"date": "2017-08-16",
 	"empId": `<empId>`,
-	"entries": [{"projectId":selected projectId},{"activityId": selected activityId},{"workLog":4}]
+	"entries": [{"projectId":selected projectId,"activityId": selected activityId,"workLog":4},{"projectId":selected projectId,"activityId": selected activityId,"workLog":4}]
 }
 
 
