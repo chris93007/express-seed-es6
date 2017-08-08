@@ -26,7 +26,7 @@ To fetch all the employees:
 
 To fetch an employee by employee ID :
 
->URL : /api/employee?empId=P10E134
+>URL : /api/employee?empId=`<empId>`
 >METHOD : get
 
 To add an employee :
@@ -35,9 +35,9 @@ To add an employee :
 >METHOD : post
 
 >req body: {
-	name: <name of employee>,
-	manager: <id of manager>,
-	empId: <empId>
+	name: `name of employee`,
+	manager: `_id of manager`,
+	empId: `empId`
 }
 
 
@@ -56,14 +56,14 @@ To add a new project:
 >URL : /api/project
 >METHOD : post
 >req body : {
-	name: <projectName>,
-	manager: <manager objId>,
-	team: [{<employee objId>}]
+	name: `projectName`,
+	manager: `_id of manager`,
+	team: [{`_id of employee objId`}]
 }
 
 To get list of timesheets for an employee:
 
->URL : /api/timesheet?empId=<empId>
+>URL : /api/timesheet?empId=`<empId>`
 >METHOD : get
 
 To add timesheet entries:
@@ -72,8 +72,8 @@ To add timesheet entries:
 >METHOD : post
 >req body : {
 	"date": "2017-08-16",
-	"empId": "P10E004",
-	"entries": [{"projectId":"<selected projectId>"},{"activityId": "<selected activityId>"},{"workLog":4}]
+	"empId": `<empId>`,
+	"entries": [{"projectId":selected projectId},{"activityId": selected activityId},{"workLog":4}]
 }
 
 
