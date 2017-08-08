@@ -1,13 +1,34 @@
-import Timesheet from '../../models/timesheet.js';
+import Timesheet from '../../models/timesheet';
 import _ from 'lodash';
 
 let TimesheetService = {
     getTimesheet(empId) {
-        return Timesheet.findAsync({ 'empId': empId });
+        return Timesheet.find({ 'empId': empId })
+            .populate({
+                path: 'projectId',
+                model: 'Project',
+                populate: {
+                    path: 'manager',
+                    model: 'Employee'
+                }
+            })
+            .populate({
+                path: 'activityId',
+                model: 'Activity'
+            })
+            .execAsync();
     },
 
     getTimesheetById(id) {
-        return Timesheet.findByIdAsync(id);
+        return Timesheet.findById(id).populate({
+            path: 'projectId',
+            model: 'Project'
+        })
+            .populate({
+                path: 'activityId',
+                model: 'Activity'
+            })
+            .execAsync();
     },
 
     addTimesheet(logs) {
@@ -15,8 +36,8 @@ let TimesheetService = {
         let empId = logs.empId;
         let promises = [];
 
-        _.each(logs.entries, (l) => {
-            let timesheet = new Timesheet(l);
+        _.each(logs.entries, (log) => {
+            let timesheet = new Timesheet(log);
             timesheet.date = date;
             timesheet.empId = empId;
             timesheet.status = 'Pending';

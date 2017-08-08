@@ -4,6 +4,14 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import mongoose from 'mongoose';
 
+//Import all the models before the route is loaded
+
+import Employee from './models/employee';
+import Project from './models/project';
+import Timesheet from './models/timesheet';
+import Activity from './models/activity';
+
+
 import apiRouter from './app.router.js';
 
 let app = express();
@@ -21,6 +29,7 @@ app.get('/', function (req, res) {
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.use('/api', apiRouter);
 

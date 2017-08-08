@@ -1,12 +1,12 @@
 import express from 'express';
-import controller from './project.controller.js';
+import controller from './project.controller';
 
 let router = express.Router();
 
 router.get('/', controller.getProject);
 router.get('/:id', controller.getProjectById);
 router.post('/', controller.addProject);
-router.put('/:id', controller.updateProject);
-router.delete('/:id', controller.deleteProject);
+
+//TODO: Update and delete endpoints
 
 export default router;

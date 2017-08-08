@@ -1,12 +1,15 @@
 import express from 'express';
 
-import helloRouter from './api/timesheet/timesheet.router.js';
-import projectsRouter from './api/projects/project.router.js';
-import activitiesRouter from './api/activity/activity.router.js';
+import timesheetRouter from './api/timesheet/timesheet.router';
+import projectsRouter from './api/projects/project.router';
+import activitiesRouter from './api/activity/activity.router';
+import employeesRouter from './api/employee/employee.router';
+
 
 let router = new express.Router();
 
-router.use('/timesheet', helloRouter);
+router.use('/timesheet', timesheetRouter);
+router.use('/employee', employeesRouter);
 router.use('/project', projectsRouter);
 router.use('/activity', activitiesRouter);
 

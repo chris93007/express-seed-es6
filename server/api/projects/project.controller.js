@@ -1,5 +1,4 @@
-import ProjectService from './project.service.js';
-import url from 'url';
+import ProjectService from './project.service';
 
 let controller = {
     getProject(req, res, next) {
@@ -24,31 +23,13 @@ let controller = {
         let project = {
             name: req.body.name,
             manager: req.body.manager,
-            teams: req.body.teams || null
+            team: req.body.team || null
         };
 
         ProjectService.addProject(project)
             .then(project => {
                 res.status(201);
                 res.send( project );
-             })
-            .catch(next);
-    },
-
-    updateProject(req, res, next) {
-        ProjectService.updateProject(req.params.id)
-            .then(project => {
-                res.status(200);
-                res.send( project );
-            })
-            .catch(next);
-    },
-
-    deleteProject(req, res, next) {
-        ProjectService.deleteProject(req.params.id)
-            .then(project => {
-                res.status(200);
-                res.send({});
              })
             .catch(next);
     }

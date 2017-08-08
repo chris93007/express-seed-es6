@@ -1,5 +1,4 @@
-import ActivityService from './activity.service.js';
-import url from 'url';
+import ActivityService from './activity.service';
 
 let controller = {
     getActivity(req, res, next) {
@@ -29,24 +28,6 @@ let controller = {
             .then(activity => {
                 res.status(201);
                 res.send( activity );
-             })
-            .catch(next);
-    },
-
-    updateActivity(req, res, next) {
-        ActivityService.updateActivity(req.params.id)
-            .then(activity => {
-                res.status(200);
-                res.send( activity );
-            })
-            .catch(next);
-    },
-
-    deleteActivity(req, res, next) {
-        ActivityService.deleteActivity(req.params.id)
-            .then(activity => {
-                res.status(200);
-                res.send({});
              })
             .catch(next);
     }
